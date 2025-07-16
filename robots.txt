@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Sitemap: https://vidextract.me/sitemap.xml
+
+# Allow all bots full access
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+User-agent: Googlebot-Mobile
+Allow: /
+User-agent: Googlebot-News
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Yandex
+Allow: /
+User-agent: Baiduspider
+Allow: /
+
+# Prevent access to specific files
+Disallow: /css/
+Disallow: /js/
+Disallow: /includes/
+Disallow: /error_log
+Disallow: /*.sql$
+
+# Crawl delay settings
+Crawl-delay: 1

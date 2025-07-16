@@ -1,0 +1,40 @@
+{
+  "name": "VidExtract",
+  "short_name": "VidExtract",
+  "description": "Multimedia information extraction platform for YouTube, Facebook and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/vidextract-pwa-icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/vidextract-pwa-icon.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any"
+    },
+    {
+      "src": "/vidextract-pwa-icon.webp",
+      "sizes": "144x144",
+      "type": "image/webp"
+    },
+    {
+      "src": "/vidextract-pwa-icon.webp",
+      "sizes": "180x180",
+      "type": "image/webp"
+    },
+    {
+      "src": "/vidextract-tab-icon.webp",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/webp"
+    }
+  ],
+  "version": "2.1",
+  "orientation": "portrait"
+}
