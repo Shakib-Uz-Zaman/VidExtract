@@ -1,0 +1,435 @@
+/* Custom Input Styles to match the provided design */
+.input-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 2.5rem;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(200, 200, 200, 0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    box-shadow: none;
+    filter: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px 0; /* Added vertical padding to increase overall height */
+    transition: all 0.2s ease;
+    width: 100%; /* Use full width of the container */
+}
+
+/* Desktop view - additional styling */
+@media (min-width: 992px) {    
+    /* Add extra spacing around the input field for better aesthetics */
+    textarea {
+        padding: 1rem 1.2rem;
+    }
+    
+    /* Increase space for button actions */
+    .input-actions {
+        padding: 12px 15px 8px 15px; /* নিচের প্যাডিং কমানো হয়েছে */
+        height: 48px; /* কমানো হয়েছে 55px থেকে */
+    }
+    
+    /* Add more space between action buttons */
+    .action-button {
+        margin: 12px 10px 5px 10px; /* নিচের মার্জিন কমানো হয়েছে */
+    }
+    
+
+    
+    /* Ensure right-actions has more space */
+    .right-actions {
+        padding-right: 5px;
+    }
+}
+
+/* Common focus style */
+.input-group:focus-within {
+    box-shadow: none !important;
+    filter: none !important;
+    border-color: rgba(150, 150, 150, 0.7) !important;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 1rem 1rem;
+    border: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    color: #777;
+    min-height: 58px; /* Increased from 50px */
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: transparent;
+}
+
+textarea {
+    overflow-y: auto;
+    resize: none;
+    padding-top: 0;
+    margin-top: 10px;
+    max-height: 120px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--primary-color-rgb), 0.5) transparent;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+    color: rgba(90, 90, 90, 0.6);
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    background-color: transparent !important;
+}
+
+/* Remove any background color when URL is pasted */
+input[type="text"]#video_url,
+textarea#video_url {
+    background-image: none !important;
+    -webkit-background-clip: border-box !important;
+}
+
+/* Override autofill styles for all browsers */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    -webkit-text-fill-color: #777 !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    background-clip: content-box !important;
+    background: none !important;
+    background-color: transparent !important;
+}
+
+/* Mozilla override for Firefox autofill */
+@-moz-document url-prefix() {
+    input[type="text"]#video_url,
+    textarea#video_url {
+        background-image: none !important;
+    }
+}
+
+input[type="text"]:focus::placeholder,
+textarea:focus::placeholder {
+    opacity: 0.3;
+    transform: translateX(5px);
+}
+
+.input-actions {
+    display: flex;
+    border-top: none;
+    height: 45px; /* কমানো হয়েছে 50px থেকে */
+    justify-content: space-between;
+    padding: 12px 10px 8px 10px; /* নিচের প্যাডিং কমানো হয়েছে */
+    align-items: center;
+    margin-top: 0;
+}
+
+.left-actions {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.action-button {
+    background: transparent;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #888;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    height: 30px;
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    border-radius: 50%;
+    margin: 0px 7px 0px 7px; /* বাম-ডান মার্জিন */
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.action-button:last-child {
+    border-right: none;
+}
+
+.action-button:hover {
+    background-color: transparent;
+    color: #555;
+    border: none !important;
+}
+
+.action-button i {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Special styling for copy button */
+.copy-button {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.copy-button i {
+    font-size: 0.8rem;
+    color: #555555 !important;
+}
+.copy-button:hover {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Active state for copy button */
+.copy-button.active {
+    background-color: rgb(33, 150, 243) !important;
+    border: none !important;
+}
+.copy-button.active i {
+    color: white !important;
+}
+
+/* Special styling for paste button */
+.paste-button {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.paste-button i {
+    font-size: 0.8rem;
+    color: #555555 !important;
+}
+.paste-button:hover {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Active state for paste button */
+.paste-button.active {
+    background-color: rgb(33, 150, 243) !important;
+    border: none !important;
+}
+.paste-button.active i {
+    color: white !important;
+}
+
+/* Special styling for erase button */
+.erase-button {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.erase-button i {
+    font-size: 0.75rem;
+    color: #555555 !important;
+}
+.erase-button:hover {
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Active state for erase button */
+.erase-button.active {
+    background-color: rgb(233, 30, 99) !important;
+    border: none !important;
+}
+.erase-button.active i {
+    color: white !important;
+}
+
+/* Special styling for clear button */
+.clear-button i {
+    font-size: 0.85rem;
+    opacity: 1;
+    color: white !important;
+}
+.clear-button:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    box-shadow: none;
+}
+
+/* Special styling for submit button */
+.submit-button {
+    background-color: var(--primary-color);
+    color: white;
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    height: 30px;
+    border-radius: 50% !important;
+    -webkit-border-radius: 50% !important;
+    -moz-border-radius: 50% !important;
+    overflow: hidden;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.submit-button i,
+.action-button.submit-button i {
+    font-size: 0.85rem;
+    opacity: 1 !important;
+}
+
+.submit-button:hover {
+    background-color: var(--primary-color) !important;
+    color: white;
+    box-shadow: none;
+}
+
+/* Google-style Spinner was removed */
+/* Force refresh CSS - time: Thu 01 May 2025 04:38:07 PM UTC */
+/* Force refresh CSS - time: Thu 01 May 2025 04:46:17 PM UTC */
+/* Force refresh CSS - time: 1746118113 */
+/* Force refresh CSS - time: 1746119277 */
+/* Force refresh CSS - time: 1746119369 */
+/* Common styling for input groups */
+.input-group {
+    border-color: rgba(200, 200, 200, 0.5) !important;
+    border-width: 1px !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    filter: none !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Always make checkmark icon white when shown in buttons */
+.action-button .fa-check,
+.action-button.copy-button .fa-check,
+.action-button.paste-button .fa-check,
+.action-button.erase-button .fa-check,
+.action-button:hover .fa-check,
+.action-button:active .fa-check,
+i.fa-check {
+    color: white !important;
+}
+
+/* Webkit scrollbar styling */
+textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--primary-color-rgb), 0.5);
+    border-radius: 10px;
+}
+
+/* Force refresh CSS - time: 1746758500 */
+
+/* Video-type selector styling for within input group */
+.action-buttons-selector {
+    display: flex;
+    align-items: center !important;
+    height: 30px !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    gap: 8px !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+.action-buttons-selector:focus,
+.action-buttons-selector:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+.video-type-option.smaller {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px !important;
+    margin: 0 !important;
+    vertical-align: middle !important;
+    line-height: 1 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    border-radius: 50% !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    transition: all 0.2s ease;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+.video-type-option.smaller:focus,
+.video-type-option.smaller:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+}
+
+/* Video type icons */
+.video-type-option .video-type-label i {
+    opacity: 0.7 !important;
+}
+
+/* Hover state for video type icons */
+.video-type-option:hover i {
+    opacity: 0.8 !important;
+}
+
+
+/* Clear and extract buttons */
+.clear-button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    box-shadow: none !important;
+}
+
+.clear-button i {
+    color: white !important;
+}
+
+/* Ensure no color change on hover for both buttons */
+.submit-button:hover,
+.clear-button:hover {
+    background-color: var(--primary-color) !important;
+}
