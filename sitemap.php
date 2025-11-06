@@ -91,7 +91,6 @@ $videoPages = [
             'player_loc' => 'https://www.youtube.com/embed/example',
             'duration' => 180, // 3 minutes in seconds
             'publication_date' => $lastWeek,
-            'platform' => 'YouTube',
             'tag' => ['tutorial', 'youtube', 'video extraction', 'thumbnails']
         ]
     ],
@@ -107,7 +106,6 @@ $videoPages = [
             'player_loc' => 'https://www.facebook.com/plugins/video.php?href=example',
             'duration' => 240, // 4 minutes in seconds
             'publication_date' => $yesterday,
-            'platform' => 'Facebook',
             'tag' => ['facebook', 'video data', 'extraction tool', 'no API']
         ]
     ],
@@ -122,7 +120,6 @@ $videoPages = [
             'description' => 'How to get information from Instagram Reels using VidExtract',
             'duration' => 120, // 2 minutes in seconds
             'publication_date' => $today,
-            'platform' => 'Instagram',
             'tag' => ['instagram', 'reels', 'video information', 'social media']
         ]
     ],
@@ -137,7 +134,6 @@ $videoPages = [
             'description' => 'Complete guide to extracting video information from Twitter/X posts',
             'duration' => 150, // 2.5 minutes in seconds
             'publication_date' => $today,
-            'platform' => 'Twitter/X',
             'tag' => ['twitter', 'x', 'video extraction', 'social media data']
         ]
     ]
@@ -179,11 +175,6 @@ foreach ($allPages as $page) {
         
         echo '      <video:duration>' . $page['video']['duration'] . '</video:duration>' . PHP_EOL;
         echo '      <video:publication_date>' . $page['video']['publication_date'] . '</video:publication_date>' . PHP_EOL;
-        
-        // Add platform as a custom tag
-        if (isset($page['video']['platform'])) {
-            echo '      <video:platform>' . htmlspecialchars($page['video']['platform']) . '</video:platform>' . PHP_EOL;
-        }
         
         // Add video tags
         if (isset($page['video']['tag']) && is_array($page['video']['tag'])) {

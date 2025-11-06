@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://vidextract.me/sitemap.xml
+Sitemap: https://vidextract.me/sitemap.php
 
 # Allow all bots full access
 User-agent: Googlebot
